@@ -4,7 +4,7 @@
     border-width: 250px;
     margin-left: 40%;
     padding-left: 5%;
-    margin-top: 15%;
+    margin-top: 8%;
     padding-top: 2%;
     width: 250px;
     height: 150px;
@@ -14,4 +14,12 @@ body{
 }
 .result{
     background-color: aliceblue;
+}
+
+button{
+    background-color: brown;
+}
+h1{
+    text-align: center;
+    padding-top: 7%;
 }
