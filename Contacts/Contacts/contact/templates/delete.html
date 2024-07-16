@@ -9,11 +9,11 @@
     <title>Delete</title>
 </head>
 <body>
-    <h2>Are you want to delete "{{ contact.name}}"?</h2>
+    <h3>Are you want to delete "{{ contact.name}}"?</h3>
     <form method="post">
         {% csrf_token %}
         <button type="submit">Yes</button>
     </form>
-    <a href="{% url 'index' %}"><i class="fa-solid fa-square-caret-left"></i>No, go back contact</a>
+    <a href="{% url 'index' %}" class="back"><i class="fa-solid fa-square-caret-left"></i>No, go back contact</a>
 </body>
 </html>

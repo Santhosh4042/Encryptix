@@ -10,13 +10,13 @@
 </head>
 <body>
     <h2>Contacts</h2>
-    <a href="{% url 'add' %}"><i class="fa-solid fa-user-plus"></i>Add Contact</a>
+    <a href="{% url 'add' %}" class="add"><i class="fa-solid fa-user-plus"></i>Add Contact</a>
     <br>
-    <form action="{% url 'search' %}" method="get">
+    <form action="{% url 'search' %}" method="get" class="search">
         <input type="text" name="query" placeholder="search contacts">
         <button type="submit">Search</button>
     </form>
-    <ul>
+    <ul class="list">
         
         {% for item in contacts %}
             <li> 

@@ -11,5 +11,24 @@ button{
 }
 
 body{
-    background-image: url('static/images/cot.jpg');
+    background-image: url('/static/images/cot.jpg');
 }
+ul{
+    background-color: aliceblue;
+    margin-left: 20%;
+    margin-right: 50%;
+    border-radius: 3px;
+}
+
+.search{
+    margin-left: 20%;
+}
+.add{
+    margin-left: 20%;
+    color: black;
+}
+
+.back{
+    color: black;
+}
+
