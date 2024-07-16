@@ -1,32 +1,36 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>RPS Home</title>
 </head>
 <body>
+    <h2>Rock-Paper-Scissors</h2>
     <form method="post">
         {% csrf_token %}
         <label for="">
-            <input type="radio" name="choice" value="rock"> Rock
+            <input type="radio" name="choice" value="rock"><i class="fa-solid fa-hand-back-fist"></i></i>Rock
         </label>
         <label for="">
-            <input type="radio" name="choice" value="paper"> Paper
+            <input type="radio" name="choice" value="paper"><i class="fa-solid fa-hand"></i> Paper
         </label>
         <label for="">
-            <input type="radio" name="choice" value="scissors"> Scissors
+            <input type="radio" name="choice" value="scissors"><i class="fa-solid fa-hand-scissors"></i> Scissors
         </label>
         <button type="submit">Play</button>
     </form>
     {% if gamer %}
-        <p>Your Choice: {{ gamer }}</p>
-        <p>System Choice: {{ system }}</p>
+        <p><i class="fa-solid fa-user-tie"></i>Your Choice: {{ gamer }}</p>
+        <p><i class="fa-solid fa-display"></i>System Choice: {{ system }}</p>
         <h2>{{ result }}</h2>
     {% endif %}
-    <h3>Scores</h3>
-    <p>Your Score: {{ gscore }}</p>
-    <p>Sysytem Score: {{ sscore }}</p>
-    <a href="{% url 'reset' %}">Reset</a>
+    <h3><i class="fa-solid fa-person-chalkboard"></i>Scores</h3>
+    <p><i class="fa-solid fa-user-tie"></i>Your Score: {{ gscore }}</p>
+    <p><i class="fa-solid fa-display"></i>Sysytem Score: {{ sscore }}</p>
+    <a href="{% url 'reset' %}"><i class="fa-solid fa-arrow-rotate-left"></i>Reset</a>
 </body>
 </html>
