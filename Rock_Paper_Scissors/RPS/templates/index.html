@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS Home</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label for="">
+            <input type="radio" name="choice" value="rock"> Rock
+        </label>
+        <label for="">
+            <input type="radio" name="choice" value="paper"> Paper
+        </label>
+        <label for="">
+            <input type="radio" name="choice" value="scissors"> Scissors
+        </label>
+        <button type="submit">Play</button>
+    </form>
+    {% if gamer %}
+        <p>Your Choice: {{ gamer }}</p>
+        <p>System Choice: {{ system }}</p>
+        <h2>{{ result }}</h2>
+    {% endif %}
+    <h3>Scores</h3>
+    <p>Your Score: {{ gscore }}</p>
+    <p>Sysytem Score: {{ sscore }}</p>
+    <a href="{% url 'reset' %}">Reset</a>
+</body>
+</html>
