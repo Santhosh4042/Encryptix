@@ -4,3 +4,12 @@ h2{
     padding: 20px;
 
 }
+
+button{
+    background-color: brown;
+    border-radius: 3px;
+}
+
+body{
+    background-image: url('static/images/cot.jpg');
+}

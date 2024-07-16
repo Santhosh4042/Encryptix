@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Update</title>
 </head>
 <body>
     <h2>{% if form.instance.pk %}Update{% else %}Add{% endif %} Contact</h2>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        <h3><i class="fa-solid fa-user-tie"></i>Name: {{ form.name }}</h3>
+        <h3><i class="fa-solid fa-mobile"></i>Phone: {{ form.phone }}</h3>
+        <h3><i class="fa-solid fa-square-envelope"></i>Email: {{ form.email }}</h3>
+        <h3><i class="fa-solid fa-map-location-dot"></i>Address: {{ form.address }}</h3>
         <button type="submit">Save</button>
     </form>
-    <a href="{% url 'index' %}">Back to Contact</a>
+    <a href="{% url 'index' %}"><i class="fa-solid fa-square-caret-left"></i>Back to Contact</a>
 </body>
 </html>
