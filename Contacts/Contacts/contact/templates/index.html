@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Contacts</title>
+</head>
+<body>
+    <a href="{% url 'add' %}">Add Contact</a>
+    <form action="{% url 'search' %}" method="get">
+        <input type="text" name="query" placeholder="search contacts">
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        
+        {% for item in contacts %}
+            <li>
+                {{ item.name }} - {{ item.phone }}
+                <a href="{% url 'update' item.id %}">Update</a>
+                <a href="{% url 'delete' item.id %}">Delete</a>
+            </li>
+            
+        {% endfor %}
+            
+    </ul>
+    
+</body>
+</html>
